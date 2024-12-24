@@ -1,0 +1,339 @@
+/* src/App.css */
+
+/* Root Variables */
+:root {
+  --codepi-orange: #ff6b2b;
+  --codepi-yellow: #ffd426;
+  --codepi-blue: #00a7e1;
+  --codepi-dark: #1a1a1a;
+  --gradient-primary: linear-gradient(135deg, var(--codepi-orange), var(--codepi-yellow));
+  --gradient-secondary: linear-gradient(135deg, var(--codepi-blue), var(--codepi-yellow));
+  --transition-speed: 0.3s;
+}
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--codepi-dark);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: white;
+}
+
+/* App Container */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--codepi-dark);
+  min-height: 100vh;
+}
+
+/* Main Heading */
+.App h1 {
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Converter Section */
+.converter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+/* Converter Box */
+.converter-box {
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-speed) ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.converter-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--codepi-orange);
+}
+
+/* Converter Box Headings */
+.converter-box h2 {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input Rows */
+.input-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.multiple-inputs {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+/* Inputs and Selects */
+.input-row input,
+.input-group input,
+select {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  transition: border-color var(--transition-speed) ease, background var(--transition-speed) ease;
+}
+
+.input-row input:hover,
+.input-group input:hover,
+select:hover {
+  border-color: var(--codepi-yellow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.input-row input:focus,
+.input-group input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--codepi-orange);
+  box-shadow: 0 0 0 4px rgba(255, 107, 43, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Select Styling */
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5em;
+}
+
+/* Result Display */
+.result-display {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-display p {
+  font-size: 1.5rem;
+  color: var(--codepi-yellow);
+  font-weight: 600;
+  margin: 0.75rem 0;
+}
+
+/* Explanation Text */
+.explanation {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 2rem;
+  text-align: center;
+  transition: color var(--transition-speed) ease;
+}
+
+.explanation:hover {
+  color: var(--codepi-orange);
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+  max-width: 320px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1.25rem !important;
+  background: var(--codepi-dark) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.custom-tooltip p {
+  margin: 0.75rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.custom-tooltip code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--codepi-yellow);
+}
+
+/* Real-Life Examples Section */
+.real-life-examples {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.real-life-examples h2 {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.real-life-examples ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.real-life-examples li {
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.real-life-examples li::before {
+  content: "•";
+  color: var(--codepi-orange);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.real-life-examples li strong {
+  color: var(--codepi-yellow);
+  font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App {
+    padding: 1.25rem;
+  }
+  
+  .converter-box {
+    min-width: 100%;
+    padding: 1.75rem;
+  }
+  
+  .App h1 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .converter-section {
+    gap: 1.5rem;
+  }
+  
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ======= New Styles for Custom Select ======= */
+
+/* Shared styling for both Category and Conversion Selects */
+.custom-select {
+  background-color: black; /* Set background to black */
+  color: white; /* Set text color to white */
+  border-color: white; /* Set border color to white */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5em;
+  padding-right: 2.5rem; /* Ensure space for the custom arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: border-color var(--transition-speed) ease, background var(--transition-speed) ease;
+}
+
+/* Styling for options within Custom Selects */
+.custom-select option {
+  background-color: black; /* Set option background to black */
+  color: white; /* Set option text to white */
+}
+
+/* Hover and Focus States for Custom Selects */
+.custom-select:hover,
+.custom-select:focus {
+  border-color: var(--codepi-yellow);
+  background-color: #333; /* Slightly lighter black for hover effect */
+}
+
+.custom-select:focus {
+  box-shadow: 0 0 0 4px rgba(255, 107, 43, 0.2);
+}
