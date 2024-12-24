@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# CodePI-Universal-Converter
+A versatile and responsive tool for real-time conversions across categories like distance, temperature, currency, and more. Simplify calculations with a sleek interface and instant results.
+>>>>>>> bad56fd71792ffaf5140ab5cc10ce7b8f3f33af8
